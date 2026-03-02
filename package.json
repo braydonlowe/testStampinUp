@@ -1,0 +1,31 @@
+{
+  "name": "teststampinup",
+  "version": "1.0.0",
+  "description": "Manual and automated test coverage for account creation and profile management on stampinup.com, implemented using Playwright.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui tests",
+    "test:headed": "npx playwright test --headed",
+    "codegen": "npx playwright codegen https://www.stampinup.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braydonlowe/testStampinUp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/braydonlowe/testStampinUp/issues"
+  },
+  "homepage": "https://github.com/braydonlowe/testStampinUp#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}
