@@ -96,6 +96,8 @@ This test plan outlines the approach for first-time testing of user account crea
 
 ## 10. Future Improvements
 
+- Implement tests to be run on non-chromium browsers.
+
 ## Notes
 
 This test plan represents first-time test design for these features and is expected to evolve as additional product knowledge is gained.

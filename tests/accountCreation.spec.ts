@@ -76,4 +76,14 @@ test.describe("Account Creation flow", () => {
       page.getByText("The Password field is required.").last(),
     ).toBeVisible();
   });
+
+  test("TC-AC-004 – Validate Email Format", async ({ page }) => {
+    await accountPopup.openSignUpForm();
+    await accountPopup.emailInput.fill("email");
+    await accountPopup.submitBtn.click();
+
+    await expect(page.getByText("The Email Address field must")).toHaveText(
+      "The Email Address field must be a valid email",
+    );
+  });
 });
