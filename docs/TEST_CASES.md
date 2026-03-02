@@ -9,6 +9,22 @@ The test cases are designed to validate core user workflows, input validation, a
 
 ## 1. Account Creation
 
+### TC-AC-000 - New Account Form Can Be Filled out Correctly
+
+**Preconditions**
+
+- User is not loged in
+- Email address has not been previously used
+
+**Steps**
+
+1. Navigate to the account creation page
+2. Enter valid required user information
+
+**Expected Result**
+
+- There are no errors on any textbox
+
 ### TC-AC-001 – Create New Account with Valid Information
 
 **Preconditions**
@@ -29,7 +45,7 @@ The test cases are designed to validate core user workflows, input validation, a
 
 **Automation Coverage**
 
-- Automated
+- Manual (due to it being a production system)
 
 ---
 
@@ -52,7 +68,7 @@ The test cases are designed to validate core user workflows, input validation, a
 
 **Automation Coverage**
 
-- Manual
+- Automated
 
 ---
 
@@ -151,7 +167,7 @@ The test cases are designed to validate core user workflows, input validation, a
 
 **Automation Coverage**
 
-- Manual
+- Automated
 
 ---
 

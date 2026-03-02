@@ -3,21 +3,27 @@ import { Locator, Page } from "@playwright/test";
 export class NewAccountPopup {
   page: Page;
 
-  // Selectors for the popup form
-  signInButton = '[data-testid="menu-user-btn-signin"]';
-  createAccountBtn = '[data-testid="btn-create-account"]';
-  firstNameInput = '[data-testid="reg-first-name"]';
-  lastNameInput = '[data-testid="reg-last-name"]';
-  emailInput = '[data-testid="reg-email"]';
-  submitBtn = '[data-testid="reg-submit"]';
-
   // Define locators
+  readonly signInButton: Locator;
+  readonly createAccountBtn: Locator;
+  readonly firstNameInput: Locator;
+  readonly lastNameInput: Locator;
+  readonly emailInput: Locator;
+  readonly submitBtn: Locator;
   readonly passwordInput: Locator;
   readonly confirmPasswordInput: Locator;
+  readonly custExists: Locator;
 
   constructor(page: Page) {
     this.page = page;
 
+    this.signInButton = page.getByTestId("menu-user-btn-signin");
+    this.createAccountBtn = page.getByTestId("btn-create-account");
+    this.firstNameInput = page.getByTestId("reg-first-name");
+    this.lastNameInput = page.getByTestId("reg-last-name");
+    this.emailInput = page.getByTestId("reg-email");
+    this.submitBtn = page.getByTestId("reg-submit");
+    this.custExists = page.getByTestId("test-message");
     this.passwordInput = page.getByLabel("Password", { exact: true });
     this.confirmPasswordInput = page.getByLabel("Confirm Password", {
       exact: true,
@@ -25,8 +31,8 @@ export class NewAccountPopup {
   }
 
   async openSignUpForm() {
-    await this.page.click(this.signInButton);
-    await this.page.click(this.createAccountBtn);
+    await this.signInButton.click();
+    await this.createAccountBtn.click();
   }
 
   async fillAccountForm(
@@ -35,10 +41,9 @@ export class NewAccountPopup {
     email: string,
     password: string,
   ) {
-    await this.page.fill(this.firstNameInput, firstName);
-    await this.page.fill(this.lastNameInput, lastName);
-    await this.page.fill(this.emailInput, email);
-
+    await this.firstNameInput.fill(firstName);
+    await this.lastNameInput.fill(lastName);
+    await this.emailInput.fill(email);
     await this.passwordInput.fill(password);
     await this.confirmPasswordInput.fill(password);
   }
@@ -46,10 +51,10 @@ export class NewAccountPopup {
   async submitAccount(safe = true) {
     if (safe) {
       console.log(
-        `[Dry Run] Would submit account with email: ${await this.page.inputValue(this.emailInput)}`,
+        `[Dry Run] Would submit account with email: ${await this.emailInput.inputValue()}`,
       );
     } else {
-      await this.page.click(this.submitBtn);
+      await this.submitBtn.click();
     }
   }
 

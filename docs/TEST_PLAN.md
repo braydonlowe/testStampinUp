@@ -56,7 +56,7 @@ This test plan outlines the approach for first-time testing of user account crea
 
 ## 6. Test Data Strategy
 
-- Unique or disposable email addresses are used for account creation.
+- A singular unique or disposable email addresses is used for account creation. This will only be done once manually due to this being a production enviornment.
 - Non-production-safe personal data is used for profile and address fields.
 - Test data is generated dynamically where possible to avoid collisions with existing accounts.
 
@@ -95,6 +95,8 @@ This test plan outlines the approach for first-time testing of user account crea
 ---
 
 ## 10. Future Improvements
+
+- Implement tests to be run on non-chromium browsers.
 
 ## Notes
 
