@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { AccountPopup } from "../pages/accountPopup";
+import { NewAccountPopup } from "../pages/newAccountPopup";
 
 function generateEmail() {
   return `example+test${Date.now()}@example.com`;
@@ -8,7 +8,7 @@ function generateEmail() {
 test("Create a new account via popup", async ({ page }) => {
   await page.goto("https://www.stampinup.com/");
 
-  const accountPopup = new AccountPopup(page);
+  const accountPopup = new NewAccountPopup(page);
   const email = generateEmail();
 
   // Safe mode: does NOT actually submit a form

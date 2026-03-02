@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 
-export class AccountPopup {
+export class NewAccountPopup {
   page: Page;
 
   // Selectors for the popup form
