@@ -167,7 +167,7 @@ The test cases are designed to validate core user workflows, input validation, a
 
 **Automation Coverage**
 
-- Manual
+- Automated
 
 ---
 

@@ -13,7 +13,7 @@ export class SignInPopup {
 
     this.signInButton = page.locator('[data-testid="menu-user-btn-signin"]');
     this.emailInput = page.locator('[data-testid="auth-email"]');
-    this.passwordInput = page.getByLabel("Password", { exact: true });
+    this.passwordInput = page.getByLabel("Password", { exact: true }).first();
     this.submitBtn = page.locator('[data-testid="auth-submit"]');
   }
 
