@@ -2,7 +2,7 @@
 
 ## 1. Objective
 
-This test plan outlines the apprach for first-time testing of user account creation and inital account setup functionality on stampinup.com. The goal is to validate that a new user can successfully create an account, configure essential profile information, and add an address, using both manual test cases and automated tests.
+This test plan outlines the approach for first-time testing of user account creation and initial account setup functionality on stampinup.com. The goal is to validate that a new user can successfully create an account, configure essential profile information, and add an address, using both manual test cases and automated tests.
 
 ---
 
@@ -23,7 +23,7 @@ This test plan outlines the apprach for first-time testing of user account creat
 - Password reset or recovery
 - Email or SMS delivery validation
 - Checkout, payments, or order management.
-- Backend services, databaases, or admin tools.
+- Backend services, databases, or admin tools.
 
 ---
 
@@ -32,7 +32,7 @@ This test plan outlines the apprach for first-time testing of user account creat
 - Manual test cases are created first to validate core user workflows and expected behavior.
 - Automated tests are developed based on these manual test cases using Playwright.
 - Testing focuses on primary (happy-path) scenarios as well as key validation and error-handling cases.
-- Automation prioritizes test readability, mantainability, and intent over exhaustive UI coverage.
+- Automation prioritizes test readability, maintainability, and intent over exhaustive UI coverage.
 
 ---
 
@@ -45,12 +45,12 @@ This test plan outlines the apprach for first-time testing of user account creat
 
 ---
 
-## 5. Test Enviornment
+## 5. Test Environment
 
 - Website: https://www.stampinup.com
-- Browser: cromium-based desktop browser
-- Tests are executed against the publicly accessible production site.
-- No direct access to backend systems or test enviornments.
+- Browser: chromium-based desktop browser
+- Tests are executed against the publicly accessible production site
+- No direct access to backend systems or test environments
 
 ---
 
@@ -71,7 +71,7 @@ This test plan outlines the apprach for first-time testing of user account creat
 
 ### Exit Criteria
 
-- All defined manual tes cases are executed
+- All defined manual test cases are executed
 - Automated tests run successfully without critical failures.
 - Core user flows are validated end to end.
 
@@ -90,7 +90,7 @@ This test plan outlines the apprach for first-time testing of user account creat
 - Playwright is used as the automation framework.
 - Automated tests align directly with documented manual test cases.
 - Stable and readable selectors are preferred where available.
-- AI-assisted tooling may be used to accelerate test creation and reinement
+- AI-assisted tooling may be used to accelerate test creation and refinement
 
 ---
 
