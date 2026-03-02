@@ -7,6 +7,7 @@ function generateEmail() {
 
 test.describe("Account Creation flow", () => {
   let accountPopup: NewAccountPopup;
+  const existingEmail = "donscott1890@gmail.com"; // Our test users email address
 
   test.beforeEach(async ({ page }) => {
     await page.goto("https://www.stampinup.com/");
@@ -38,8 +39,6 @@ test.describe("Account Creation flow", () => {
   test("TC-AC-002: Should Display error for existing email", async ({
     page,
   }) => {
-    const existingEmail = "donscott1890@gmail.com"; // Our test users email address
-
     await accountPopup.createAccount(
       "Duplicate",
       "User",
@@ -49,7 +48,32 @@ test.describe("Account Creation flow", () => {
     );
 
     await expect(accountPopup.custExists).toHaveText("Customer already exists");
+  });
 
-    // Check for expected result
+  test("TC-AC-003 – Validate Required Fields During Account Creation", async ({
+    page,
+  }) => {
+    await accountPopup.openSignUpForm();
+    await accountPopup.submitBtn.click();
+
+    await expect(page.getByText("The First Name field is")).toHaveText(
+      "The First Name field is required.",
+    );
+    await expect(page.getByText("The Last Name field is")).toHaveText(
+      "The Last Name field is required.",
+    );
+    await expect(page.getByText("The Email Address field is")).toHaveText(
+      "The Email Address field is required.",
+    );
+
+    // For the main Password field
+    await expect(
+      page.getByText("The Password field is required.").first(),
+    ).toBeVisible();
+
+    // For the Confirm Password field
+    await expect(
+      page.getByText("The Password field is required.").last(),
+    ).toBeVisible();
   });
 });
